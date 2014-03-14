@@ -10,7 +10,7 @@ def qstring2mtparam(qstring):
 mimetype=re.compile('(application|audio|example|image|message|model|multipart|text|video|(vnd|x|prs)\.[^/]+)/[^/]+$')
 
 def path2ctype(path):
-   ctype=path[1:] 
+   ctype='/'.join(path.split('/')[-2:])
    if not mimetype.match(ctype):
        ctype=''
    return ctype
