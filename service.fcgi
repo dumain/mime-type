@@ -10,14 +10,14 @@ def qstring2mtparam(qstring):
 mimetype=re.compile('(application|audio|example|image|message|model|multipart|text|video|(vnd|x|prs)\.[^/]+)/[^/]+$')
 
 def path2ctype(path):
-   ctype=path[1:] #Replace with something that can cope with not being the root of the site
-   if not mimetype.match(ctype)
+   ctype=path[1:] 
+   if not mimetype.match(ctype):
        ctype=''
    return ctype
 
 def application(environ, start_response):
    myctype=path2ctype(environ['SCRIPT_URL'])
-   if not myctype
+   if not myctype:
        status = '404 File not found'
        response_headers = []
    elif (environ['REQUEST_METHOD']=='HEAD'):
