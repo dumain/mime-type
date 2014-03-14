@@ -7,9 +7,11 @@ import re
 def qstring2mtparam(qstring):
    return  [ '%s=%s' % (key, value) for key,value in urlparse.parse_qsl(qstring)]
 
+mimetype=re.compile('(application|audio|example|image|message|model|multipart|text|video|(vnd|x|prs)\.[^/]+)/[^/]+$')
+
 def path2ctype(path):
    ctype=path[1:] #Replace with something that can cope with not being the root of the site
-   if not r'(application|audio|example|image|message|model|multipart|text|video|(vnd|x|prs)\.[^/]+)/[^/]+$'.match(ctype)
+   if not mimetype.match(ctype)
        ctype=''
    return ctype
 
