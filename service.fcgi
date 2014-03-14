@@ -9,7 +9,7 @@ def qstring2mtparam(qstring):
 
 def path2ctype(path):
    ctype=path[1:] #Replace with something that can cope with not being the root of the site
-   if not re.match(r'(application|audio|example|image|message|model|multipart|text|video|(vnd|x|prs)\.[^/]+)/[^/]+$')
+   if not re.match(r'(application|audio|example|image|message|model|multipart|text|video|(vnd|x|prs)\.[^/]+)/[^/]+$',ctype)
        ctype=''
    return ctype
 
