@@ -16,7 +16,7 @@ def path2ctype(path):
    return ctype
 
 def application(environ, start_response):
-   myctype=path2ctype(environ['SCRIPT_URL'])
+   myctype=path2ctype(environ['PATH_INFO'])
    if not myctype:
        status = '404 File not found'
        response_headers = []
